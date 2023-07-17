@@ -34,19 +34,13 @@ const SearchBar = () => {
         >
           <InputGroup>
             <Input
-              width={"100%"}
               placeholder="Search..."
               ref={ref}
               onChange={(e) => {
                 if (e.target.value === "") setSearch("");
               }}
             />
-            <InputRightAddon
-              as={"button"}
-              children={<BsSearch />}
-              w={"100%"}
-              h={"100%"}
-            />
+            <InputRightAddon as={"button"} children={<BsSearch />} />
           </InputGroup>
         </form>
       </Box>

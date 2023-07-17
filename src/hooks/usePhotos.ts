@@ -10,6 +10,8 @@ export interface Photo {
     medium: string;
     large: string;
     large2x: string;
+    landscape: string;
+    portrait: string;
   };
 }
 

@@ -1,8 +1,7 @@
+import { Box, Image, Spinner, Text } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
-import { Spinner, Text } from "@chakra-ui/react";
 
 import usePhoto from "../hooks/usePhoto";
-import PhotoComp from "./PhotoComp";
 
 const DetailPage = () => {
   const params = useParams();
@@ -11,7 +10,18 @@ const DetailPage = () => {
 
   if (isLoading) return <Spinner />;
   if (error) return <Text color={"red"}>Image not found</Text>;
-  if (data) return <PhotoComp image={data} size="original" />;
+  if (data)
+    return (
+      <Box marginX={{ base: "10vw", lg: "70px" }} mt={"10px"}>
+        <Image
+          src={data.src.large2x}
+          objectFit={"contain"}
+          alt={data.alt}
+          h={"80vh"}
+          width={"90vw"}
+        />
+      </Box>
+    );
   // throw error;
 };
 
